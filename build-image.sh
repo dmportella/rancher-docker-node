@@ -1,8 +1,17 @@
 #!/bin/bash
 
+REPO=tests/expressjs
 TAG=${TAG:-$(grep version dockerfile | awk '{print $3}')}
-IMAGE=tests/expressjs:${TAG}
+IMAGE=${REPO}:${TAG}
 
-docker build -t ${IMAGE} .
+echo "docker build -t ${IMAGE} ."
+docker build -t ${IMAGE} . > docker-build.log
+
+IMAGE_ID=$(grep 'Successfully built' docker-build.log | awk '{print $3}')
+
+echo "Tagging latest" ${IMAGE_ID} 
+
+echo "docker tag ${IMAGE_ID} ${REPO}:latest"
+docker tag ${IMAGE_ID} ${REPO}:latest
 
 echo "done building" ${IMAGE}
