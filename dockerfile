@@ -1,6 +1,6 @@
 FROM node:argon
 MAINTAINER Daniel Portella
-LABEL version 1.0.0
+LABEL version 1.0.2
 LABEL description Example expressjs site.
 
 ENV PORT 8080

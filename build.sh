@@ -12,7 +12,7 @@ echo "build docker image"
 
 if [ -z "$TRAVIS" ]; then
 	TAG=${TAG:-$(grep version dockerfile | awk '{print $3}')}
-	IMAGE=tests/expressjs:${TAG}
+	IMAGE=dmportella/expressjs:${TAG}
 
 	echo "running container image:" ${IMAGE}
 	

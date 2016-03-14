@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO=tests/expressjs
+REPO=dmportella/expressjs
 TAG=${TAG:-$(grep version dockerfile | awk '{print $3}')}
 IMAGE=${REPO}:${TAG}
 

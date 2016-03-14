@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = new express.Router();
+const os = require('os');
 
 const appHealth = {
 	throw500: false,
@@ -31,7 +32,18 @@ router.get('/throw500', (req, res, next) => {
 		res.json(
 			{
 				version: '1.0.0',
-				status: 'OK'
+				status: 'OK',
+				hostname: os.hostname(),
+				versions: process.versions,
+				process: {
+					uptime: process.uptime,
+					memoryUsage: process.memoryUsage(),
+					platform: process.platform,
+					arch: process.arch,
+					title: process.title
+				},
+				cpus: os.cpus(),
+				network: os.networkInterfaces()
 			});
 	}
 });
