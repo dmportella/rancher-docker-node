@@ -32,14 +32,14 @@ status: "OK"
 
 ## Building
 
-* The shell file `build.sh` will run npm install, install and run grunt and it will build and run the docker image.
+The shell file `build.sh` will run npm install, install and run grunt and it will build and run the docker image.
 
-Run: `./build.sh`
+> $ `./build.sh`
 
-* Builds docker image and tags it.
+Builds docker image and tags it.
 
-Run: `./build-image.sh`
+> $ `./build-image.sh`
 
 * Installs npm and grunt
 
-Run: `./setup.sh`
+> $ `./setup.sh`
