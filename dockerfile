@@ -19,7 +19,7 @@ RUN cd /app && npm install --silent
 RUN groupadd -r appgroup -g 433 && \
     useradd -u 431 -r -g appgroup -d /app -s /sbin/nologin -c "app user" app-user && \
     chown -R app-user:appgroup /app && \
-    chmod -R 777 /app
+    chmod -R 774 /app
 
 EXPOSE 8080
 
