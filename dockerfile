@@ -1,8 +1,11 @@
 FROM node:argon
 MAINTAINER Daniel Portella
-LABEL version 1.0.3
+ARG CONT_IMG_VER
+
+LABEL version ${CONT_IMG_VER}
 LABEL description Example expressjs site.
 
+ENV CONT_IMG_VER ${CONT_IMG_VER}
 ENV PORT 8080
 ENV NODE_ENV production
 

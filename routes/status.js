@@ -31,7 +31,7 @@ router.get('/throw500', (req, res, next) => {
 	} else if (!appHealth.timeout) {
 		res.json(
 			{
-				version: '1.0.0',
+				version: process.env.CONT_IMG_VER,
 				status: 'OK',
 				hostname: os.hostname(),
 				versions: process.versions,

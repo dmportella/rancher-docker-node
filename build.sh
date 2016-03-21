@@ -7,11 +7,17 @@ echo "Setup environment"
 echo "grunt"
 grunt
 
-echo "build docker image"
-./build-image.sh
+echo "building docker image"
+VERSION="$1"
+if [ -z "$1" ]
+  then
+    VERSION=0.0.0
+fi
+echo "version: " ${VERSION}
+./build-image.sh "${VERSION}"
 
 if [ -z "$TRAVIS" ]; then
-	TAG=${TAG:-$(grep version dockerfile | awk '{print $3}')}
+	TAG="${VERSION}"
 	IMAGE=dmportella/expressjs:${TAG}
 
 	echo "running container image:" ${IMAGE}
