@@ -43,7 +43,8 @@ router.get('/throw500', (req, res, next) => {
 					title: process.title
 				},
 				cpus: os.cpus(),
-				network: os.networkInterfaces()
+				network: os.networkInterfaces(),
+				environment: process.env
 			});
 	}
 });
