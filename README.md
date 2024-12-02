@@ -1,6 +1,6 @@
 # rancher-docker-node
 
-Express JS app build to run on RANCHER a docker management platform.
+Express JS app build to run on kubernetes, RANCHER and aws EKS docker management platforms.
 
 ## DOCKERHUB
 
@@ -10,7 +10,7 @@ Express JS app build to run on RANCHER a docker management platform.
 
 Simple espress js site with route to simulate site failure.
 
-Built for testing *kubernetes* and *rancher* instances.
+Built for testing *kubernetes*, *EKS* and *rancher* instances.
 
 ### Normal route
 
