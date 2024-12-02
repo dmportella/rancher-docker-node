@@ -10,13 +10,11 @@ TAG="$1"
 IMAGE=${REPO}:${TAG}
 
 echo "docker build -t ${IMAGE} ."
-docker build --build-arg CONT_IMG_VER=${TAG} -t ${IMAGE} . > docker-build.log
+docker build --build-arg CONT_IMG_VER=${TAG} -t ${IMAGE} .
 
-IMAGE_ID=$(grep 'Successfully built' docker-build.log | awk '{print $3}')
+echo "Tagging latest" IMAGE 
 
-echo "Tagging latest" ${IMAGE_ID} 
-
-echo "docker tag ${IMAGE_ID} ${REPO}:latest"
-docker tag ${IMAGE_ID} ${REPO}:latest
+echo "docker tag ${IMAGE} ${REPO}:latest"
+docker tag ${IMAGE} ${REPO}:latest
 
 echo "done building" ${IMAGE}

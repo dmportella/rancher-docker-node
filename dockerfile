@@ -1,15 +1,16 @@
-FROM node:argon
-MAINTAINER Daniel Portella
+FROM node:current-slim
 ARG CONT_IMG_VER
 ARG USER_ID=431
 ARG GROUP_ID=433
 
-LABEL version ${CONT_IMG_VER}
-LABEL description Example expressjs site.
+LABEL MAINTAINER="Daniel Portella"
+LABEL SUPPORT="https://ko-fi.com/gothyl"
+LABEL version="${CONT_IMG_VER}"
+LABEL description="Example expressjs site."
 
-ENV CONT_IMG_VER ${CONT_IMG_VER}
-ENV PORT 8080
-ENV NODE_ENV production
+ENV CONT_IMG_VER=${CONT_IMG_VER}
+ENV PORT=8080
+ENV NODE_ENV=production
 
 RUN mkdir app
 
